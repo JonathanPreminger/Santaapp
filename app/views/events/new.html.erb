@@ -1,0 +1,29 @@
+<div class="main-block">
+  <h2>Hi ! You want to create a new event ?!</h2>
+  <div class="explanation">
+    <p>First create your event, </p>
+    <p>  then add particpants, </p>
+    <p>  and when you're sure you didn't forget someone just confirm the event,</p>
+    <p>  all particpant will receive by mail the person to whom he must give a gift</p>
+  </div>
+  <div class="sub-block">
+    <p>NEW EVENT</p>
+    <%= form_for @event do |f| %>
+      <p><%= f.text_field :title, placeholder: :title, class:"text-field"  %></p>
+      <p><%= f.text_field :amount, placeholder: :amount, class:"text-field"  %></p>
+      <p> PARTICIPANTS</p>
+    <%= f.fields_for :participants, Participant.new  do |participant_form| %>
+      <p><%= participant_form.text_field :name, placeholder: :name, class:"text-field"  %></p>
+      <p><%= participant_form.text_field :email, placeholder: :email, class:"text-field" %></p>
+    <% end %>
+      <p class="small-indication"> For adding more participants go to EDIT after saving your event </p>
+      <p><%= submit_tag("save")%></p>
+    <% end %>
+  </div>
+
+  <%= link_to events_path do %>
+  <div class="small-link">
+    <p>BACK TO INDEX</p>
+  </div>
+  <%end%>
+</div>

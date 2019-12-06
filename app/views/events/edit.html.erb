@@ -1,0 +1,17 @@
+<div class="main-block">
+
+  <h2> EDIT <%= @event.title.upcase%></h2>
+
+  <%= form_for @event do |f| %>
+  <p class="field"><%= f.text_field :title, placeholder: :title %></p>
+  <p><%= f.text_field :amount, placeholder: :amount %></p>
+  <p> ADD PARTICIPANTS !</p>
+
+  <%= f.fields_for :participants, Participant.new  do |participant_form| %>
+  <p><%= participant_form.text_field :name, placeholder: :name %></p>
+  <p><%= participant_form.text_field :email, placeholder: :email %></p>
+  <% end %>
+
+  <p><%= submit_tag("save") %></p>
+  <% end %>
+</div>

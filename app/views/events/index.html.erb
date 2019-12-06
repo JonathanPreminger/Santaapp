@@ -1,0 +1,25 @@
+<div class="main-block">
+  <h2>INDEX</h2>
+  <div class="explanation">
+    <p>Herre is all your events</p>
+    <p>Click them to see more details or add particpants if you didn't confirm it yet </p>
+  </div>
+  <div class="sub-block">
+      <% @events.each do |event| %>
+      <div class="border-bottom margin-top">
+        <p>>> <%= link_to event.title.upcase, event_path(event), class:"event-title" %></p>
+        <% if event.final_confirmation%>
+          <p>This one is already confirmed</p>
+        <% else %>
+          <p>This one is not yet confirmed, you can still add participant</p>
+        <%end%>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to new_event_path do %>
+  <div class="small-link">
+    <p>CREATE AN EVENT</p>
+  </div>
+  <%end%>
+</div>

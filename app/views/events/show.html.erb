@@ -1,0 +1,36 @@
+<div class="main-block">
+  <h2> <%= @event.title.upcase %> </h2>
+  <div class="sub-block border-bottom">
+    <p>Particiapnts are :</p>
+    <% @participants.each do |participants| %>
+      <p class="event-title">>&nbsp;&nbsp;<%= participants.name.upcase %></p>
+    <% end %>
+  </div>
+
+  <div class="sub-block border-bottom">
+    <p>VALID THIS EVENT</p>
+    <%= form_for(@event) do |s| %>
+    <p>Confirm the Event ?</p>
+    <p><%=s.check_box :final_confirmation %></p>
+    <p><%= s.submit 'Save', class:'nicebutton box-shadow2' %></p>
+    <%end%>
+  </div>
+
+  <%= link_to edit_event_path(@event) do %>
+  <div class="small-link">
+    <p>ADD PARTICIPANTS</p>
+  </div>
+  <%end%>
+
+  <%= link_to event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } do %>
+  <div class="small-link">
+    <p>DELETE EVENT</p>
+  </div>
+  <%end%>
+
+  <%= link_to events_path do %>
+  <div class="small-link">
+    <p>BACK TO INDEX</p>
+  </div>
+  <%end%>
+</div>

@@ -1,0 +1,27 @@
+<div class="main-block">
+  <h2>BIENVENUE SUR SANTA APP !</h2>
+  <div class="sub-block">
+    <% if !user_signed_in? %>
+      <%= link_to new_user_session_path do %>
+      <div class="small-link">
+        <p>SIGN IN !</p>
+      </div>
+      <%end%>
+
+      <%= link_to new_user_registration_path do %>
+      <div class="small-link">
+        <p> SIGN UP !</p>
+      </div>
+      <%end%>
+    <% end %>
+  </div>
+  <div class="sub-block">
+    <% if user_signed_in? %>
+      <%= link_to new_event_path do %>
+      <div class="small-link">
+        <p>CREATE A NEW EVENT</p>
+      </div>
+      <%end%>
+    <% end %>
+  </div>
+</div>
