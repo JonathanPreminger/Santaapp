@@ -1,24 +1,15 @@
-# README
+DOWNLOAD the repo 
+rails db:create db:migrate 
+then rails s 
+and enjoy at localhost:3000 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SANTA APP 
 
-Things you may want to cover:
+Create an account 
 
-* Ruby version
+And create an event, then add participant, and confirm the event when everybody is on the event, they will receive an email with the name of whom they have to make a gift ! 
 
-* System dependencies
 
-* Configuration
+Jonathan Mete
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
