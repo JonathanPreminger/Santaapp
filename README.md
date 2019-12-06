@@ -1,8 +1,18 @@
 DOWNLOAD the repo 
+
+
 rails db:create db:migrate 
+
+
 then rails s 
+
+
 launch maildev
+
+
 and enjoy at localhost:3000 
+
+
 
 
 SANTA APP 
